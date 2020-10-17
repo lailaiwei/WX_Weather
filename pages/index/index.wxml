@@ -1,0 +1,39 @@
+<image src="https://source.unsplash.com/random" class="bg"></image>
+<view class="container">
+
+  <view class="nowWeather"> 
+    <view class="city w"> {{city}} {{district}}</view>
+    <view class="road w"> {{street}}</view>
+    <view class="temp w b">{{tmp}}°</view>
+    <view class="weather w"> {{txt}} | 能见度 {{vis}}</view>
+  </view>
+  <view class="weatherDetail">
+    <view class="">
+      <view class="w center"> {{dir}}</view>
+      <view class="w b center"> {{sc}}级</view>
+    </view>
+    <view class="l"></view>
+    <view class="">
+      <view class="w center"> 相对湿度</view>
+      <view class="w b center"> {{hum}}%</view>
+    </view>
+    <view class="l"></view>
+    <view class="">
+      <view class="w center"> 体感温度</view>
+      <view class="w b center"> {{fl}}°</view>
+    </view>
+  </view>
+</view>
+
+<view wx:for="{{daily_forecast}}" wx:for-index="i" wx:for-item="item">
+    <view class="hor forcast">
+      <view class="center "> {{item.date}} </view>
+      <view class="hor">
+        <image class="img" src="../../assets/icons/{{item.cond_code_d}}.png"></image>
+        <view class="center">{{item.cond_txt_d}} </view>
+      </view>  
+      <view class="center">{{item.tmp_min}}° / {{item.tmp_max}}°</view>
+
+    </view>
+</view>
+<view class="hor center ft"> {{lifestyle[0].brf}} {{lifestyle[0].txt}}</view>
